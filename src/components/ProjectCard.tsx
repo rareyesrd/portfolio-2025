@@ -7,16 +7,16 @@ interface ProjectCardProps {
   title: string;
   description: string;
   technologies: string[];
-  imageUrl: string;
+  image: string;
   liveUrl?: string;
   githubUrl?: string;
 }
 
 const ProjectCard = ({
   title,
-  description,
+  description,  
   technologies,
-  imageUrl,
+  image,
   liveUrl,
   githubUrl,
 }: ProjectCardProps) => {
@@ -28,7 +28,7 @@ const ProjectCard = ({
     >
       {/* Project Image */}
       <Image
-        src={imageUrl}
+        src={image}
         alt={title}
         fill
         className="object-cover transition-transform duration-300 group-hover:scale-110"

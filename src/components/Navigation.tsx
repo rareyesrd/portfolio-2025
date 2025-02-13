@@ -2,9 +2,17 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import ThemeToggle from "./ThemeToggle";
+import { useState } from 'react'
+import { locales } from '@/config/i18n'
+import { Menu, Transition } from '@headlessui/react'
+import { Fragment } from 'react'
+import { IoLanguage, IoMoon, IoSunny, IoSettings } from 'react-icons/io5'
+import { useTheme } from './ThemeProvider'
 
-const Navigation = () => {
+const Navigation = ({ currentLang }: { currentLang: string }) => {
+  const { theme, toggleTheme } = useTheme()
+  const isDark = theme === 'dark'
+
   const links = [
     { href: "/", label: "Home" },
     { href: "/projects", label: "Projects" },
@@ -38,7 +46,63 @@ const Navigation = () => {
                 </Link>
               ))}
             </div>
-            <ThemeToggle />
+            <Menu as="div" className="relative">
+              <Menu.Button className="p-2 text-gray-400 hover:text-white rounded-full hover:bg-purple-600/10 transition-colors">
+                <IoSettings className="w-6 h-6" />
+              </Menu.Button>
+              <Transition
+                as={Fragment}
+                enter="transition ease-out duration-100"
+                enterFrom="transform opacity-0 scale-95"
+                enterTo="transform opacity-100 scale-100"
+                leave="transition ease-in duration-75"
+                leaveFrom="transform opacity-100 scale-100"
+                leaveTo="transform opacity-0 scale-95"
+              >
+                <Menu.Items className="absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-gray-900 border border-purple-500/20 shadow-lg focus:outline-none">
+                  <div className="px-1 py-1">
+                    <div className="px-2 py-2 text-sm text-gray-400">
+                      <div className="flex items-center mb-2">
+                        <IoLanguage className="mr-2" />
+                        Language
+                      </div>
+                      <div className="flex gap-2 ml-6">
+                        {locales.map((locale) => (
+                          <Link
+                            key={locale}
+                            href={`/${locale}`}
+                            className={`px-2 py-1 rounded-md text-sm transition-colors ${
+                              currentLang === locale
+                                ? 'bg-purple-600 text-white'
+                                : 'text-gray-400 hover:bg-purple-600/10'
+                            }`}
+                          >
+                            {locale.toUpperCase()}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <button
+                          onClick={toggleTheme}
+                          className={`${
+                            active ? 'bg-purple-600/10' : ''
+                          } group flex w-full items-center rounded-md px-2 py-2 text-sm text-gray-400`}
+                        >
+                          {isDark ? (
+                            <IoSunny className="mr-2 h-5 w-5" />
+                          ) : (
+                            <IoMoon className="mr-2 h-5 w-5" />
+                          )}
+                          {isDark ? 'Light Mode' : 'Dark Mode'}
+                        </button>
+                      )}
+                    </Menu.Item>
+                  </div>
+                </Menu.Items>
+              </Transition>
+            </Menu>
           </div>
         </div>
       </div>

@@ -1,33 +1,28 @@
 import ProjectCard from "./ProjectCard";
 
+
 const projects = [
   {
-    title: "Habit Tracker",
-    description:
-      "A simple React habit tracker that uses firebase database to keep track of your daily habits.",
-    technologies: ["React", "Firebase", "TailwindCSS"],
-    imageUrl: "/projects/habit-tracker.jpg",
-    liveUrl: "https://your-habit-tracker.vercel.app",
-    githubUrl: "https://github.com/yourusername/habit-tracker",
+    title: "Project 1",
+    description: "A modern web application",
+    image: "/images/projects/project1.jpg",
+    technologies: ["React", "TypeScript", "Tailwind"],
+    link: "#"
   },
   {
-    title: "Portfolio Website",
-    description:
-      "A modern portfolio website built with Next.js and Framer Motion for smooth animations.",
-    technologies: ["Next.js", "TypeScript", "Framer Motion", "TailwindCSS"],
-    imageUrl: "/projects/portfolio.jpg",
-    liveUrl: "https://your-portfolio.com",
-    githubUrl: "https://github.com/yourusername/portfolio",
+    title: "Project 2",
+    description: "Mobile-first responsive design",
+    image: "/images/projects/project1.jpg",
+    technologies: ["Next.js", "Node.js", "MongoDB"],
+    link: "#"
   },
   {
-    title: "AI Chat Application",
-    description:
-      "Real-time chat application powered by OpenAI's GPT-3, with user authentication and message history.",
-    technologies: ["Next.js", "OpenAI API", "Prisma", "PostgreSQL"],
-    imageUrl: "/projects/ai-chat.jpg",
-    liveUrl: "https://your-ai-chat.vercel.app",
-    githubUrl: "https://github.com/yourusername/ai-chat",
-  },
+    title: "Project 3",
+    description: "AI-powered application",
+    image: "/images/projects/project1.jpg",
+    technologies: ["Python", "TensorFlow", "AWS"],
+    link: "#"
+  }
 ];
 
 const ProjectsSection = () => {
