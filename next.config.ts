@@ -2,19 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  async headers() {
-    return [
-      {
-        source: "/(.*).pdf",
-        headers: [{ key: "Content-Type", value: "application/pdf" }],
-      },
-    ];
-  },
-  basePath: "",
   output: "standalone",
   images: {
     unoptimized: true,
-    domains: ["localhost"],
     remotePatterns: [
       {
         protocol: "https",
