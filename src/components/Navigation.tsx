@@ -10,14 +10,14 @@ import { IoLanguage, IoSettings } from "react-icons/io5";
 import { Menu, Transition } from "@headlessui/react";
 // import { useTheme } from "./ThemeProvider";
 import { getDictionary } from "@/lib/dictionary";
-
+import { useRouter } from "next/navigation";
 const Navigation = ({ currentLang }: { currentLang: Locale }) => {
   const [dict, setDict] = useState<Awaited<ReturnType<typeof getDictionary>>>(
     {} as Awaited<ReturnType<typeof getDictionary>>
   );
   // const { theme, toggleTheme } = useTheme();
   // const isDark = theme === "light";
-
+  const router = useRouter();
   useEffect(() => {
     getDictionary(currentLang).then(setDict);
   }, [currentLang]);
@@ -41,7 +41,8 @@ const Navigation = ({ currentLang }: { currentLang: Locale }) => {
         <div className="flex items-center justify-between h-16">
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
+            onClick={() => router.push("/")}
+            className="cursor-pointer text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
           >
             Rafael.dev
           </motion.div>
