@@ -50,61 +50,61 @@ export default async function Home({
               </h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 justify-center items-center">
                 <Image
-                  src="/images/javascript.svg"
+                  src="images/javascript.svg"
                   alt="JavaScript"
                   width={100}
                   height={100}
                 />
                 <Image
-                  src="/images/typescript.svg"
+                  src="images/typescript.svg"
                   alt="TypeScript"
                   width={100}
                   height={100}
                 />
                 <Image
-                  src="/images/nextjs_logo_light.svg"
+                  src="images/nextjs_logo_light.svg"
                   alt="Next.js"
                   width={100}
                   height={100}
                 />
                 <Image
-                  src="/images/react_light.svg"
+                  src="images/react_light.svg"
                   alt="React"
                   width={100}
                   height={100}
                 />
                 <Image
-                  src="/images/angular.svg"
+                  src="images/angular.svg"
                   alt="Angular"
                   width={100}
                   height={100}
                 />
                 <Image
-                  src="/images/wordpress.svg"
+                  src="images/wordpress.svg"
                   alt="WordPress"
                   width={100}
                   height={100}
                 />
                 <Image
-                  src="/images/aws_light.svg"
+                  src="images/aws_light.svg"
                   alt="AWS"
                   width={100}
                   height={100}
                 />
                 <Image
-                  src="/images/azure.svg"
+                  src="images/azure.svg"
                   alt="Azure"
                   width={100}
                   height={100}
                 />
                 <Image
-                  src="/images/html5.svg"
+                  src="images/html5.svg"
                   alt="HTML"
                   width={100}
                   height={100}
                 />
                 <Image
-                  src="/images/css_old.svg"
+                  src="images/css_old.svg"
                   alt="CSS"
                   width={100}
                   height={100}

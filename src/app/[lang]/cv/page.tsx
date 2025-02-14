@@ -2,8 +2,8 @@ import { getDictionary } from "@/lib/dictionary";
 import { Locale } from "@/config/i18n";
 
 import Navigation from "@/components/Navigation";
-const esCv = "/pdf/cv/es/cv.pdf";
-const enCv = "/pdf/cv/en/cv.pdf";
+const esCv = "pdf/cv/es/cv.pdf";
+const enCv = "pdf/cv/en/cv.pdf";
 
 export default async function CV({
   params,

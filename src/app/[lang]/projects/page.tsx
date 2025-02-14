@@ -16,7 +16,7 @@ export default async function ProjectsPage({
       title: "Páginas Amarillas",
       description:
         "Un portal de directorio telefónico en línea para encontrar lo que buscas y ahorrar tiempo en la República Dominicana.",
-      image: "/images/paginas_amarillas.png",
+      image: "images/paginas_amarillas.png",
       tags: ["Angular", "TypeScript", "Tailwind"],
       link: "https://www.paginasamarillas.com.do/",
     },
@@ -24,7 +24,7 @@ export default async function ProjectsPage({
       title: "Super Pages Pr",
       description:
         "Un portal de directorio telefónico en línea para encontrar lo que buscas y ahorrar tiempo en Puerto Rico.",
-      image: "/images/superpagespr.png",
+      image: "images/superpagespr.png",
       tags: ["Angular", "TypeScript", "Tailwind"],
       link: "https://superpagespr.com/es/home",
     },
@@ -33,7 +33,7 @@ export default async function ProjectsPage({
       title: "Cloud Bridge CX",
       description:
         "Cloud bridge CX a platform designed to extend the capabilities of the our client's Cloud CX infrastructure.",
-      image: "/images/interactstrategies.png",
+      image: "images/interactstrategies.png",
       tags: ["Nextjs", "Javascript", "Tailwind", "Aws Console services"],
       link: "https://cloudbridgecx.com/",
     },
@@ -41,7 +41,7 @@ export default async function ProjectsPage({
       title: "Urbe Guía Inmobiliaria ",
       description:
         "Portal que potencia el crecimiento del mercado inmobiliario y construcción, ofreciendo una plataforma que establece conexiones significativas entre proveedores e inversionistas.",
-      image: "/images/urbe.png",
+      image: "images/urbe.png",
       tags: ["Wordpress", "PHP", "Azure"],
       link: "https://urbe.com.do/",
     },
@@ -49,7 +49,7 @@ export default async function ProjectsPage({
       title: "Cáritas Dominicana",
       description:
         "Cáritas Dominicana es un organismo de la Pastoral Social de la Iglesia instalado en 1961 por la Conferencia del Episcopado Dominicano como instrumento al servicio del pueblo dominicano.",
-      image: "/images/caritas.png",
+      image: "images/caritas.png",
       tags: ["Wordpress", "PHP", "cPanel"],
       link: "https://caritas.org.do/wp/",
     },
