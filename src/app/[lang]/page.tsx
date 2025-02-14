@@ -11,7 +11,7 @@ export default async function Home({
   params: Promise<{ lang: Locale }>;
 }) {
   const { lang } = await params;
-  const dict = await getDictionary(lang);
+  const dict = await getDictionary();
 
   return (
     <div lang={lang} className="min-h-screen bg-white dark:bg-gray-900">

@@ -11,7 +11,7 @@ export default async function CV({
   params: Promise<{ lang: Locale }>;
 }) {
   const { lang } = await params;
-  const dict = await getDictionary(lang);
+  const dict = await getDictionary();
   const cvUrl = lang === "es" ? esCv : enCv;
 
   return (

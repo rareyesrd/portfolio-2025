@@ -9,7 +9,7 @@ export default async function ProjectsPage({
   params: Promise<{ lang: Locale }>;
 }) {
   const { lang } = await params;
-  const dict = await getDictionary(lang);
+  const dict = await getDictionary();
 
   const projects = [
     {

@@ -1,44 +1,34 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-import { match } from "@formatjs/intl-localematcher";
-import Negotiator from "negotiator";
+const locales = ["es"];
+// const defaultLocale = "es";
 
-const locales = ["en", "es"];
-const defaultLocale = "en";
-
-function getLocale(request: NextRequest): string {
-  const headers = new Headers(request.headers);
-  const acceptLanguage = headers.get("accept-language");
-  if (acceptLanguage) {
-    headers.set("accept-language", acceptLanguage.replaceAll("_", "-"));
-  }
-
-  const negotiatorHeaders: Record<string, string> = {};
-  headers.forEach((value, key) => (negotiatorHeaders[key] = value));
-
-  const languages = new Negotiator({ headers: negotiatorHeaders }).languages();
-
-  return match(languages, locales, defaultLocale);
-}
+// function getLocale(): string {
+//   return defaultLocale;
+// }
 
 export function middleware(request: NextRequest) {
+  // Get pathname from request (e.g. /products, /about, /)
   const pathname = request.nextUrl.pathname;
-  const pathnameIsMissingLocale = locales.every(
-    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+
+  // Check if the pathname has a locale
+  const pathnameHasLocale = locales.some(
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
-  if (pathnameIsMissingLocale) {
-    const locale = getLocale(request);
-    return NextResponse.redirect(
-      new URL(`/${locale}/${pathname}`, request.url)
-    );
+  if (!pathnameHasLocale) {
+    // Redirect to default locale if no locale in pathname
+    const newUrl = new URL(`/es${pathname}`, request.url);
+    return NextResponse.redirect(newUrl);
   }
+
+  return NextResponse.next();
 }
 
 export const config = {
   matcher: [
-    // Skip all internal paths (_next)
-    "/((?!_next|api|favicon.ico).*)",
+    // Skip all internal paths (_next, assets, api)
+    "/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js).*)",
   ],
 };

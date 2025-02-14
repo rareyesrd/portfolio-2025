@@ -1,13 +1,13 @@
 "use client";
 
-import { Fragment, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import { motion } from "framer-motion";
-import { Locale, locales } from "@/config/i18n";
+import { Locale } from "@/config/i18n";
 import Link from "next/link";
 
-import { IoLanguage, IoSettings } from "react-icons/io5";
-import { Menu, Transition } from "@headlessui/react";
+// import { IoLanguage, IoSettings } from "react-icons/io5";
+// import { Menu, Transition } from "@headlessui/react";
 // import { useTheme } from "./ThemeProvider";
 import { getDictionary } from "@/lib/dictionary";
 import { useRouter } from "next/navigation";
@@ -19,8 +19,8 @@ const Navigation = ({ currentLang }: { currentLang: Locale }) => {
   // const isDark = theme === "light";
   const router = useRouter();
   useEffect(() => {
-    getDictionary(currentLang).then(setDict);
-  }, [currentLang]);
+    getDictionary().then(setDict);
+  }, []);
 
   const links = [
     { href: `/${currentLang}/`, label: dict?.navigation?.home ?? "" },
@@ -58,7 +58,7 @@ const Navigation = ({ currentLang }: { currentLang: Locale }) => {
                 </Link>
               ))}
             </div>
-            <Menu as="div" className="relative">
+            {/*<Menu as="div" className="relative">
               <Menu.Button className="p-2 text-gray-400 hover:text-white rounded-full hover:bg-purple-600/10 transition-colors">
                 <IoSettings className="w-6 h-6" />
               </Menu.Button>
@@ -110,11 +110,11 @@ const Navigation = ({ currentLang }: { currentLang: Locale }) => {
                         //   {isDark ? "Light Mode" : "Dark Mode"}
                         // </button>
                       )}
-                    </Menu.Item> */}
+                    </Menu.Item> 
                   </div>
                 </Menu.Items>
-              </Transition>
-            </Menu>
+              </Transition> 
+            </Menu>*/}
           </div>
         </div>
       </div>
