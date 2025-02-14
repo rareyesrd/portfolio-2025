@@ -3,8 +3,13 @@ import TerminalIntro from "@/components/TerminalIntro";
 import { getDictionary } from "@/lib/dictionary";
 import { Locale } from "@/config/i18n";
 import Image from "next/image";
+import Link from "next/link";
 
-export default async function Home({ params }: { params: { lang: Locale } }) {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ lang: Locale }>;
+}) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
 
@@ -26,13 +31,13 @@ export default async function Home({ params }: { params: { lang: Locale } }) {
               </p>
 
               <div className="flex gap-4 justify-center">
-                <a
+                <Link
                   href="/projects"
                   aria-label={dict.hero.viewProjects}
                   className="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-full text-white font-medium transition-colors duration-200"
                 >
                   {dict.hero.viewProjects}
-                </a>
+                </Link>
               </div>
             </header>
 

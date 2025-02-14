@@ -24,7 +24,7 @@ const TerminalIntro = () => {
     }, 50);
 
     return () => clearInterval(intervalId);
-  }, []);
+  }, [fullText]);
 
   return (
     <motion.div

@@ -17,7 +17,6 @@ function getLocale(request: NextRequest): string {
   const negotiatorHeaders: Record<string, string> = {};
   headers.forEach((value, key) => (negotiatorHeaders[key] = value));
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const languages = new Negotiator({ headers: negotiatorHeaders }).languages();
 
   return match(languages, locales, defaultLocale);

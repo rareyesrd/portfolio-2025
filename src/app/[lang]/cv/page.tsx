@@ -5,7 +5,11 @@ import Navigation from "@/components/Navigation";
 const esCv = "/pdf/cv/es/cv.pdf";
 const enCv = "/pdf/cv/en/cv.pdf";
 
-export default async function CVPage({ params }: { params: { lang: Locale } }) {
+export default async function CV({
+  params,
+}: {
+  params: Promise<{ lang: Locale }>;
+}) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
   const cvUrl = lang === "es" ? esCv : enCv;

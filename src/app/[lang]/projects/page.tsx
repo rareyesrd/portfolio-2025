@@ -6,7 +6,7 @@ import Navigation from "@/components/Navigation";
 export default async function ProjectsPage({
   params,
 }: {
-  params: { lang: Locale };
+  params: Promise<{ lang: Locale }>;
 }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
