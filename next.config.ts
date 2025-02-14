@@ -11,18 +11,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  async rewrites() {
-    return [
-      {
-        source: "/:lang/images/:path*",
-        destination: "/images/:path*",
-      },
-      {
-        source: "/:lang/pdf/:path*",
-        destination: "/pdf/:path*",
-      },
-    ];
-  },
 };
 
 export default nextConfig;
