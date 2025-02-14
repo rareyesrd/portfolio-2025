@@ -9,8 +9,9 @@ const firaCode = Fira_Code({
 });
 
 export const metadata = {
-  title: "Developer Portfolio",
-  description: "A showcase of my work and skills as a software developer",
+  title: "Portafolio de Rafael Reyes",
+  description:
+    "Un resumen de mis trabajos y habilidades como desarrollador de software",
 };
 
 export default function RootLayout({
@@ -19,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning>
       <body
         className={`${inter.variable} ${firaCode.variable} font-sans bg-white dark:bg-gray-900 text-gray-900 dark:text-white`}
       >

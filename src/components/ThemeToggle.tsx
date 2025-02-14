@@ -20,7 +20,7 @@ const ThemeToggle = () => {
       whileTap={{ scale: 0.95 }}
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
-      aria-label="Toggle theme"
+      aria-label="Cambiar tema"
     >
       {theme === "dark" ? (
         <svg

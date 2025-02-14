@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 
 const TerminalIntro = () => {
   const [text, setText] = useState("");
-  const fullText = `const developer = {
-  name: "Rafael Alexander Reyes Perez",
-  role: "Software Developer",
-  skills: ["React", "JavaScript", "TypeScript", "Next.js", "Angular", "WordPress", "AWS", "Azure", "HTML", "CSS"],
-  passion: "Building beautiful, interactive experiences"
+  const fullText = `const desarrollador = {
+  nombre: "Rafael Alexander Reyes Perez",
+  rol: "Desarrollador de Software",
+  habilidades: ["React", "JavaScript", "TypeScript", "Next.js", "Angular", "WordPress", "AWS", "Azure", "HTML", "CSS"],
+  pasión: "Construir experiencias interactivas hermosas y funcionales"
 };`;
 
   useEffect(() => {
