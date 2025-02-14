@@ -4,11 +4,8 @@ import ProjectsSection from "@/components/ProjectsSection";
 import { getDictionary } from "@/lib/dictionary";
 import { Locale } from "@/config/i18n";
 
-export default async function Home({
-  params: { lang },
-}: {
-  params: { lang: Locale };
-}) {
+export default async function Home({ params }: { params: { lang: Locale } }) {
+  const { lang } = await params;
   const dict = await getDictionary(lang);
 
   return (

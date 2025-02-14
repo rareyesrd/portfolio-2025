@@ -1,14 +1,11 @@
 import { getDictionary } from "@/lib/dictionary";
 import { Locale } from "@/config/i18n";
 import Navigation from "@/components/Navigation";
-const esCv = "/images/cv/es/cv.pdf";
-const enCv = "/images/cv/en/cv.pdf";
+const esCv = "/pdf/cv/es/cv.pdf";
+const enCv = "/pdf/cv/en/cv.pdf";
 
-export default async function CVPage({
-  params: { lang },
-}: {
-  params: { lang: Locale };
-}) {
+export default async function CVPage({ params }: { params: { lang: Locale } }) {
+  const { lang } = await params;
   const dict = await getDictionary(lang);
   const cvUrl = lang === "es" ? esCv : enCv;
 

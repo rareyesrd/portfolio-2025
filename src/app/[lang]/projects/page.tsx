@@ -4,10 +4,11 @@ import Image from "next/image";
 import Navigation from "@/components/Navigation";
 
 export default async function ProjectsPage({
-  params: { lang },
+  params,
 }: {
   params: { lang: Locale };
 }) {
+  const { lang } = await params;
   const dict = await getDictionary(lang);
 
   const projects = [
