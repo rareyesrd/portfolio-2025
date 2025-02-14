@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 const TerminalIntro = () => {
   const [text, setText] = useState("");
   const fullText = `const developer = {
-  name: "Your Name",
-  role: "Full Stack Developer",
-  skills: ["React", "Node.js", "TypeScript", "Next.js"],
+  name: "Rafael Alexander Reyes Perez",
+  role: "Software Developer",
+  skills: ["React", "JavaScript", "TypeScript", "Next.js", "Angular", "WordPress", "AWS", "Azure", "HTML", "CSS"],
   passion: "Building beautiful, interactive experiences"
 };`;
 
@@ -30,7 +30,7 @@ const TerminalIntro = () => {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="w-full max-w-2xl bg-black/30 backdrop-blur-md rounded-lg p-6 font-mono text-green-400 border border-green-500/20"
+      className="w-full max-w-2xl bg-black backdrop-blur-md rounded-lg p-6 font-mono text-green-400 border border-green-500/20"
     >
       <div className="flex gap-2 mb-3">
         <div className="w-3 h-3 rounded-full bg-red-500" />

@@ -6,26 +6,29 @@ import { motion } from "framer-motion";
 import { Locale, locales } from "@/config/i18n";
 import Link from "next/link";
 
-import { IoLanguage, IoMoon, IoSunny, IoSettings } from "react-icons/io5";
+import { IoLanguage, IoSettings } from "react-icons/io5";
 import { Menu, Transition } from "@headlessui/react";
-import { useTheme } from "./ThemeProvider";
+// import { useTheme } from "./ThemeProvider";
 import { getDictionary } from "@/lib/dictionary";
 
 const Navigation = ({ currentLang }: { currentLang: Locale }) => {
   const [dict, setDict] = useState<Awaited<ReturnType<typeof getDictionary>>>(
     {} as Awaited<ReturnType<typeof getDictionary>>
   );
-  const { theme, toggleTheme } = useTheme();
-  const isDark = theme === "dark";
+  // const { theme, toggleTheme } = useTheme();
+  // const isDark = theme === "light";
 
   useEffect(() => {
     getDictionary(currentLang).then(setDict);
   }, [currentLang]);
 
   const links = [
-    { href: "/", label: dict?.navigation?.home ?? "" },
-    { href: "/projects", label: dict?.navigation?.projects ?? "" },
-    { href: "/cv", label: dict?.navigation?.curriculum ?? "" },
+    { href: `/${currentLang}/`, label: dict?.navigation?.home ?? "" },
+    {
+      href: `/${currentLang}/projects`,
+      label: dict?.navigation?.projects ?? "",
+    },
+    { href: `/${currentLang}/cv`, label: dict?.navigation?.curriculum ?? "" },
   ];
 
   return (
@@ -90,23 +93,23 @@ const Navigation = ({ currentLang }: { currentLang: Locale }) => {
                         ))}
                       </div>
                     </div>
-                    <Menu.Item>
+                    {/* <Menu.Item>
                       {({ active }) => (
-                        <button
-                          onClick={toggleTheme}
-                          className={`${
-                            active ? "bg-purple-600/10" : ""
-                          } group flex w-full items-center rounded-md px-2 py-2 text-sm text-gray-400`}
-                        >
-                          {isDark ? (
-                            <IoSunny className="mr-2 h-5 w-5" />
-                          ) : (
-                            <IoMoon className="mr-2 h-5 w-5" />
-                          )}
-                          {isDark ? "Light Mode" : "Dark Mode"}
-                        </button>
+                        // <button
+                        //   onClick={toggleTheme}
+                        //   className={`${
+                        //     active ? "bg-purple-600/10" : ""
+                        //   } group flex w-full items-center rounded-md px-2 py-2 text-sm text-gray-400`}
+                        // >
+                        //   {isDark ? (
+                        //     <IoSunny className="mr-2 h-5 w-5" />
+                        //   ) : (
+                        //     <IoMoon className="mr-2 h-5 w-5" />
+                        //   )}
+                        //   {isDark ? "Light Mode" : "Dark Mode"}
+                        // </button>
                       )}
-                    </Menu.Item>
+                    </Menu.Item> */}
                   </div>
                 </Menu.Items>
               </Transition>

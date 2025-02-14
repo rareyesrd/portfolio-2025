@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "Creando Experiencias Digitales",
-    "description": "Desarrollador full-stack especializado en crear experiencias digitales excepcionales. Convirtamos tus ideas en realidad.",
+    "description": "Desarrollador de software especializado en crear experiencias digitales excepcionales. Convirtamos tus ideas en realidad.",
     "viewProjects": "Ver Proyectos",
     "contactMe": "Contáctame"
   },
@@ -14,5 +14,11 @@
   "cv": {
     "title": "Currículum",
     "download": "Descargar CV"
+  },
+  "technologies": {
+    "title": "Tecnologías que uso"
+  },
+  "projects": {
+    "viewProject": "Ver Proyecto"
   }
 }

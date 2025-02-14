@@ -2,11 +2,12 @@ import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
-    title: "Project 1",
-    description: "A modern web application",
-    image: "/images/projects/project1.jpg",
-    technologies: ["React", "TypeScript", "Tailwind"],
-    link: "#",
+    title: "Páginas Amarillas",
+    description:
+      "El Portal De Los Dominicanos — Encuentra lo que buscas y ahorra tiempo con nuestro directorio telefónico en línea.",
+    image: "/images/paginas-amarillas.png",
+    technologies: ["Angular", "TypeScript", "Tailwind"],
+    link: "https://www.paginasamarillas.com.do/",
   },
   {
     title: "Project 2",
