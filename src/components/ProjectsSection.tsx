@@ -1,28 +1,27 @@
 import ProjectCard from "./ProjectCard";
 
-
 const projects = [
   {
     title: "Project 1",
     description: "A modern web application",
     image: "/images/projects/project1.jpg",
     technologies: ["React", "TypeScript", "Tailwind"],
-    link: "#"
+    link: "#",
   },
   {
     title: "Project 2",
     description: "Mobile-first responsive design",
     image: "/images/projects/project1.jpg",
     technologies: ["Next.js", "Node.js", "MongoDB"],
-    link: "#"
+    link: "#",
   },
   {
     title: "Project 3",
     description: "AI-powered application",
     image: "/images/projects/project1.jpg",
     technologies: ["Python", "TensorFlow", "AWS"],
-    link: "#"
-  }
+    link: "#",
+  },
 ];
 
 const ProjectsSection = () => {
