@@ -4,5 +4,15 @@
     "description": "Desarrollador full-stack especializado en crear experiencias digitales excepcionales. Convirtamos tus ideas en realidad.",
     "viewProjects": "Ver Proyectos",
     "contactMe": "Contáctame"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "curriculum": "Currículum",
+    "contact": "Contacto"
+  },
+  "cv": {
+    "title": "Currículum",
+    "download": "Descargar CV"
   }
-} 
+}
